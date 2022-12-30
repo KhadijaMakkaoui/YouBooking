@@ -16,6 +16,8 @@ import java.util.List;
 public class Hotel {
     @Id
     private Long id;
+    //uuid for the hotel
+    private String reference;
     private String nom;
     private String adresse;
     private String ville;
