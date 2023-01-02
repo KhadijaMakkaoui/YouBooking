@@ -9,11 +9,7 @@ import java.util.List;
 
 @Repository
 public interface HotelRepo extends JpaRepository<Hotel, Long> {
-
-/*
-    List<Chambre> getChambres(Hotel hotel);
-*/
-
+    public List<Hotel> getHotelsByApproved(boolean approved);
 
 
 }

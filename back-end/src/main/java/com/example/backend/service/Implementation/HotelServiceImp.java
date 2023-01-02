@@ -11,6 +11,11 @@ import java.util.List;
 @Service
 public class HotelServiceImp  implements HotelService {
     HotelRepo hotelRepo;
+
+    public HotelServiceImp(HotelRepo hotelRepo) {
+        this.hotelRepo = hotelRepo;
+    }
+
     @Override
     public Hotel saveHotel(Hotel hotel) {
 
@@ -29,8 +34,18 @@ public class HotelServiceImp  implements HotelService {
     }
 
     @Override
-    public Hotel getHotel(Long id) {
+    public Hotel getById(Long id) {
         return hotelRepo.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Hotel> getAllHotels() {
+        return hotelRepo.findAll();
+    }
+
+    @Override
+    public List<Hotel> getHotelsByApproved(boolean approved) {
+        return hotelRepo.getHotelsByApproved(approved);
     }
 
    /* @Override

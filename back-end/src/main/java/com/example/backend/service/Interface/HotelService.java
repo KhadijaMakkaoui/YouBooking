@@ -9,8 +9,9 @@ public interface HotelService {
     public Hotel saveHotel(Hotel hotel);
     public Hotel updateHotel(Hotel hotel);
     public void deleteHotel(Hotel hotel);
-    public Hotel getHotel(Long id);
-/*
-    public List<Chambre> getChambres(Hotel hotel);
-*/
+    public Hotel getById(Long id);
+
+    List<Hotel> getAllHotels();
+
+    List<Hotel> getHotelsByApproved(boolean approved);
 }

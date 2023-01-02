@@ -2,10 +2,7 @@ package com.example.backend.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -16,6 +13,7 @@ import java.util.List;
 @ToString
 public class Hotel {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     //uuid for the hotel
    /* private String reference;*/
