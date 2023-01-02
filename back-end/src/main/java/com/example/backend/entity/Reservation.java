@@ -6,6 +6,7 @@ import lombok.*;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.util.Date;
 
 @Entity
 @AllArgsConstructor
@@ -16,9 +17,8 @@ import javax.persistence.ManyToOne;
 public class Reservation {
     @Id
     private Long id;
-private String dateDebut;
-private String dateFin;
-private String dateReservation;
+private Date dateDebut;
+private Date dateFin;
 private String etat;
 private float prix;
 @ManyToOne
