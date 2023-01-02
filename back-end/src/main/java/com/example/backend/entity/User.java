@@ -15,6 +15,7 @@ import java.util.List;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nom;
     private String prenom;
@@ -23,8 +24,11 @@ public class User {
     private String adresse;
     @ManyToOne
     private Role role;
-    @ManyToMany
-    private List<Permission> permission;
+
+    @OneToMany(mappedBy = "proprietaire")
+    private List<Hotel> hotel;
+    @ManyToOne
+    private Reservation reservation;
 
 
 }

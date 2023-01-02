@@ -25,5 +25,7 @@ public class Hotel {
     private boolean approved;
     @OneToMany(mappedBy = "hotel")
     private List<Chambre> chambre;
+    @ManyToOne
+    private User proprietaire;
 
 }
