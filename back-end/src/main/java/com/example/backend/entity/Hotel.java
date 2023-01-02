@@ -26,7 +26,7 @@ public class Hotel {
     private boolean approved;
     @OneToMany(mappedBy = "hotel",fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Chambre> chambre;
+    private List<Chambre> chambres;
     @ManyToOne
     private User proprietaire;
 

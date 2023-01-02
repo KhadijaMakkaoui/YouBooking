@@ -18,9 +18,9 @@ public class ChambreController {
     public List<Chambre> getAllChambres(){
         return chambreServiceImp.getAllChambres();
     }
-    @PostMapping
-    public Chambre saveChambre(@RequestBody Chambre chambre){
-        return chambreServiceImp.addChambre(chambre);
+    @PostMapping("/add/{hotelId}")
+    public Chambre saveChambre(@RequestBody Chambre chambre,@PathVariable("hotelId") Long hotelId){
+        return chambreServiceImp.addChambre(chambre,hotelId);
     }
 
 }
