@@ -2,6 +2,7 @@ package com.example.backend.service.Implementation;
 
 import com.example.backend.entity.Chambre;
 import com.example.backend.entity.Hotel;
+import com.example.backend.repository.ChambreRepo;
 import com.example.backend.repository.HotelRepo;
 import com.example.backend.service.Interface.HotelService;
 import org.springframework.stereotype.Service;
@@ -11,13 +12,21 @@ import java.util.List;
 @Service
 public class HotelServiceImp  implements HotelService {
     HotelRepo hotelRepo;
+    ChambreRepo chambreRepo;
 
-    public HotelServiceImp(HotelRepo hotelRepo) {
+    public HotelServiceImp(HotelRepo hotelRepo, ChambreRepo chambreRepo) {
         this.hotelRepo = hotelRepo;
+        this.chambreRepo = chambreRepo;
     }
 
     @Override
     public Hotel saveHotel(Hotel hotel) {
+        /*int nbChambres = hotel.getChambre().size();
+        for (int i = 0; i < nbChambres; i++) {
+            Chambre c= new Chambre();
+            c.setHotel(hotel);
+            chambreRepo.save(c);
+        }*/
 
         return hotelRepo.save(hotel);
     }

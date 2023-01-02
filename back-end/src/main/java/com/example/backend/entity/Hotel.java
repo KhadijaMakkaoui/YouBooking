@@ -1,5 +1,6 @@
 package com.example.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,7 +24,8 @@ public class Hotel {
     private String telephone;
     @Column(columnDefinition = "boolean default false")
     private boolean approved;
-    @OneToMany(mappedBy = "hotel")
+    @OneToMany(mappedBy = "hotel",fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Chambre> chambre;
     @ManyToOne
     private User proprietaire;

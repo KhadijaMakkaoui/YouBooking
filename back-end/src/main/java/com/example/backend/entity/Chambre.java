@@ -2,10 +2,7 @@ package com.example.backend.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -23,7 +20,8 @@ public class Chambre {
     private String numero;
     private Boolean disponible;
     private float prix;
-    @OneToMany(mappedBy = "chambre")
+    @OneToMany(mappedBy = "chambre",fetch = FetchType.LAZY)
+    @ToString.Exclude
     private List<Reservation> reservation;
     @ManyToOne
     private Hotel hotel;
