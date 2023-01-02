@@ -1,5 +1,6 @@
 package com.example.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -26,9 +27,11 @@ public class User {
     private Role role;
 
     @OneToMany(mappedBy = "proprietaire")
+    @JsonIgnore
     private List<Hotel> hotel;
-    @ManyToOne
-    private Reservation reservation;
+    @OneToMany(mappedBy = "client")
+    @JsonIgnore
+    private List<Reservation> reservation;
 
 
 }
