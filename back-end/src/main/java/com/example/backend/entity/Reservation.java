@@ -1,6 +1,5 @@
 package com.example.backend.entity;
 
-import ch.qos.logback.core.net.server.Client;
 import lombok.*;
 
 import javax.persistence.*;

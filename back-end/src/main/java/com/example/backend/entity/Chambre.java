@@ -1,5 +1,6 @@
 package com.example.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -22,6 +23,7 @@ public class Chambre {
     private float prix;
     @OneToMany(mappedBy = "chambre",fetch = FetchType.LAZY)
     @ToString.Exclude
+    @JsonIgnore
     private List<Reservation> reservation;
     @ManyToOne
     private Hotel hotel;

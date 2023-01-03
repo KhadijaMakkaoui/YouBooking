@@ -28,9 +28,11 @@ public class User {
 
     @OneToMany(mappedBy = "proprietaire")
     @JsonIgnore
+    @ToString.Exclude
     private List<Hotel> hotel;
     @OneToMany(mappedBy = "client")
     @JsonIgnore
+    @ToString.Exclude
     private List<Reservation> reservation;
 
 
