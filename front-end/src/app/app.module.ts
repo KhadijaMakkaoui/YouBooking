@@ -7,6 +7,7 @@ import { HotelDetailsComponent } from './hotels/hotel-details/hotel-details.comp
 import { HotelListComponent } from './hotels/hotel-list/hotel-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { HotelComponent } from './hotels/hotel/hotel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReservationComponent } from './reservation/reservation.component';
     HotelDetailsComponent,
     HotelListComponent,
     HeaderComponent,
-    ReservationComponent
+    ReservationComponent,
+    HotelComponent
   ],
   imports: [
     BrowserModule
