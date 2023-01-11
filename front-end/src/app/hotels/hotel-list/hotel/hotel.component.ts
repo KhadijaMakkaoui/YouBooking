@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Hotels} from "../../hotels.model";
 
 @Component({
@@ -8,4 +8,8 @@ import {Hotels} from "../../hotels.model";
 })
 export class HotelComponent {
 @Input() hotel: Hotels;
+@Output() hotelSelected = new EventEmitter<void>();
+onSelected() {
+  this.hotelSelected.emit();
+}
 }

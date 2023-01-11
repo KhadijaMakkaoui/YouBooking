@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Hotels} from "./hotels.model";
 
 @Component({
   selector: 'app-hotels',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./hotels.component.css']
 })
 export class HotelsComponent {
+  selectedHotel: Hotels;
+
 
 }

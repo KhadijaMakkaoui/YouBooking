@@ -1,8 +1,16 @@
 <div class="row">
   <div class="col-md-8">
-    <app-hotel-list></app-hotel-list>
+    <app-hotel-list
+    (hotelWasSelected)="selectedHotel=$event"></app-hotel-list>
   </div>
   <div class="col-md-4">
-    <app-hotel-details></app-hotel-details>
+    <app-hotel-details
+    *ngIf="selectedHotel;else noHotelSelected"
+    [hotelDetail]="selectedHotel">
+
+    </app-hotel-details>
+    <ng-template #noHotelSelected>
+      <h3>Please select a hotel</h3>
+    </ng-template>
   </div>
 </div>
