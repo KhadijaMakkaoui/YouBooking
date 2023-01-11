@@ -7,7 +7,7 @@ import { HotelDetailsComponent } from './hotels/hotel-details/hotel-details.comp
 import { HotelListComponent } from './hotels/hotel-list/hotel-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ReservationComponent } from './reservation/reservation.component';
-import { HotelComponent } from './hotels/hotel/hotel.component';
+import { HotelComponent } from './hotels/hotel-list/hotel/hotel.component';
 
 @NgModule({
   declarations: [
