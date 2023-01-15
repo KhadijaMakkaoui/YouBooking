@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {Hotels} from "../hotels.model";
+import {HotelsService} from "../hotels.service";
 
 @Component({
   selector: 'app-hotel-list',
@@ -8,14 +9,11 @@ import {Hotels} from "../hotels.model";
 })
 export class HotelListComponent {
   @Output() hotelWasSelected = new EventEmitter<Hotels>();
-  hotels:Hotels[] = [
-    new Hotels('Hotel 1', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp'),
-    new Hotels('Hotel 2', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp'),
-    new Hotels('Hotel 3', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp'),
-    new Hotels('Hotel 4', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp')
-  ];
-  constructor() { }
-
+  hotels:Hotels[] = [];
+  constructor(private hotelService:HotelsService) { }
+  ngOnInit() {
+    this.hotels = this.hotelService.getHotels();
+  }
   onHotelSelected(h: Hotels) {
     this.hotelWasSelected.emit(h);
   }
