@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Hotels} from "../../hotels.model";
+import {HotelsService} from "../../hotels.service";
 
 @Component({
   selector: 'app-hotel',
@@ -8,8 +9,9 @@ import {Hotels} from "../../hotels.model";
 })
 export class HotelComponent {
 @Input() hotel: Hotels;
-@Output() hotelSelected = new EventEmitter<void>();
+constructor(private hotelService:HotelsService) { }
+
 onSelected() {
-  this.hotelSelected.emit();
+  this.hotelService.hotelSelected.emit(this.hotel);
 }
 }

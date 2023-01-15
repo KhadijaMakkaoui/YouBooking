@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {Hotels} from "./hotels.model";
 
 @Injectable({
@@ -11,6 +11,7 @@ export class HotelsService {
     new Hotels('Hotel 3', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp'),
     new Hotels('Hotel 4', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp')
   ];
+  hotelSelected=new EventEmitter<Hotels>();
   constructor() { }
   getHotels(){
     //get a copy of the array
