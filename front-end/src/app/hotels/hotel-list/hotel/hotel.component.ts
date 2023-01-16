@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Hotels} from "../../hotels.model";
 import {HotelsService} from "../../hotels.service";
 
@@ -11,7 +11,4 @@ export class HotelComponent {
 @Input() hotel: Hotels;
 constructor(private hotelService:HotelsService) { }
 
-onSelected() {
-  this.hotelService.hotelSelected.emit(this.hotel);
-}
 }

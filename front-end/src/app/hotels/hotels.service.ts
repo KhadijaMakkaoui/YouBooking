@@ -17,4 +17,7 @@ export class HotelsService {
     //get a copy of the array
     return this.hotels.slice();
   }
+  getHotel(index:number){
+    return this.hotels[index];
+  }
 }
