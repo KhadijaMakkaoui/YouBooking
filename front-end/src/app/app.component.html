@@ -1,6 +1,5 @@
 <app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
-  <app-reservation *ngIf="loadedFeature==='reservation'"></app-reservation>
-  <app-hotels *ngIf="loadedFeature==='hotel'"></app-hotels>
+  <router-outlet></router-outlet>
 </div>
 

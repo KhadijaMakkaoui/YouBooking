@@ -8,6 +8,9 @@ import { HotelListComponent } from './hotels/hotel-list/hotel-list.component';
 import { HeaderComponent } from './header/header.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { HotelComponent } from './hotels/hotel-list/hotel/hotel.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HotelComponent } from './hotels/hotel-list/hotel/hotel.component';
     HotelComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
