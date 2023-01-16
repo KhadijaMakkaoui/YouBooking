@@ -11,6 +11,7 @@ import { HotelComponent } from './hotels/hotel-list/hotel/hotel.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
+import { HotelStartComponent } from './hotels/hotel-start/hotel-start.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {AppRoutingModule} from "./app-routing.module";
     HotelListComponent,
     HeaderComponent,
     ReservationComponent,
-    HotelComponent
+    HotelComponent,
+    HotelStartComponent
   ],
   imports: [
     BrowserModule,
