@@ -1,6 +1,6 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <app-hotel *ngFor="let h of hotels"
+  <app-hotel *ngFor="let h of hotels ;let i =index"
              [hotel]="h"
-             (hotelSelected)="onHotelSelected(h)"
+             [index]="i"
   ></app-hotel>
 </div>

@@ -9,6 +9,7 @@ import {HotelsService} from "../../hotels.service";
 })
 export class HotelComponent {
 @Input() hotel: Hotels;
+@Input() index: number;
 constructor(private hotelService:HotelsService) { }
 
 }
