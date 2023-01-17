@@ -10,7 +10,6 @@ import {AppRoutingModule} from "./app-routing.module";
 import { FooterComponent } from './component/footer/footer.component';
 import {HotelComponent} from "./view/hotel-list/hotel/hotel.component";
 import {HotelListComponent} from "./view/hotel-list/hotel-list.component";
-import { RoomListComponent } from './view/room-list/room-list.component';
 import { BookingComponent } from './view/booking/booking.component';
 import { PageNotFoundComponent } from './view/page-not-found/page-not-found.component';
 
@@ -22,7 +21,6 @@ import { PageNotFoundComponent } from './view/page-not-found/page-not-found.comp
     HotelComponent,
     HotelListComponent,
     FooterComponent,
-    RoomListComponent,
     BookingComponent,
     PageNotFoundComponent,
   ],

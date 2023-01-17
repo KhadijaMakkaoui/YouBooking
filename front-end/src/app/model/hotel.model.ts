@@ -6,6 +6,7 @@ export class Hotel {
   public telephone:string;
   public description:string;
   public imagePath: string;
+  public prix: number;
 
 
 }

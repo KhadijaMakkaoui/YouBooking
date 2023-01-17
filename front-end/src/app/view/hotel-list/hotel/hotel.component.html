@@ -1,11 +1,12 @@
   <div class="col"   >
     <div class="card">
       <div> <img [src]="hotel.imagePath" class="img-responsive image"> </div>
-      <p class="rating">{{hotel.id}}</p>
+      <p class="rating">8.5</p>
       <div class="card-body">
         <h5 class="card-title">{{hotel.name | uppercase}}</h5>
         <p class="card-text"><i class="fa fa-map-marker marker"></i> {{hotel.adresse}}, {{hotel.ville}}</p>
         <p class="card-text">{{hotel.description}}</p>
+        <p class="card-text fs-6 fw-bold">{{hotel.prix}} DH</p>
       </div>
       <div class="text-center">
       <button class="btn text-white mb-5" style="background-color: #653399" (click)="hotelRooms(hotel.id)" >Book Now</button>
