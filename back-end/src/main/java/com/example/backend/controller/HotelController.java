@@ -5,8 +5,9 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/hotels")
+@RequestMapping("/api/v1/hotels")
 public class HotelController {
     HotelServiceImp hotelServiceImp;
     public HotelController(HotelServiceImp hotelServiceImp) {
@@ -17,11 +18,11 @@ public class HotelController {
         return hotelServiceImp.getAllHotels();
     }
     @PostMapping
-    public Hotel saveHotel(@Validated @RequestBody Hotel hotel){
+    public Hotel saveHotel( @RequestBody Hotel hotel){
         return hotelServiceImp.saveHotel(hotel);
     }
     @GetMapping("/approved/{approved}")
-    public List<Hotel> getHotelsByApproved(@Validated @PathVariable("approved") boolean approved){
+    public List<Hotel> getHotelsByApproved( @PathVariable("approved") boolean approved){
         return hotelServiceImp.getHotelsByApproved(approved);
     }
 }
