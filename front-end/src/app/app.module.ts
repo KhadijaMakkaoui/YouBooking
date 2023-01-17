@@ -12,6 +12,7 @@ import {HotelComponent} from "./view/hotel-list/hotel/hotel.component";
 import {HotelListComponent} from "./view/hotel-list/hotel-list.component";
 import { RoomListComponent } from './view/room-list/room-list.component';
 import { BookingComponent } from './view/booking/booking.component';
+import { PageNotFoundComponent } from './view/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BookingComponent } from './view/booking/booking.component';
     FooterComponent,
     RoomListComponent,
     BookingComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
