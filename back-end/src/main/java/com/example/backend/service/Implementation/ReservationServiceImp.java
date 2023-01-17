@@ -1,20 +1,21 @@
 package com.example.backend.service.Implementation;
 
 import com.example.backend.entity.Chambre;
+import com.example.backend.entity.Hotel;
 import com.example.backend.entity.Reservation;
-import com.example.backend.entity.User;
 import com.example.backend.repository.ReservationRepo;
 import com.example.backend.service.Interface.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class ReservationServiceImp implements ReservationService {
 ReservationRepo reservationRepo;
+@Autowired
+HotelServiceImp hotelServiceImp;
 @Autowired
 ChambreServiceImp chambreServiceImp;
 @Autowired
@@ -26,14 +27,17 @@ UserServiceImp userServiceImp;
     }
 
     @Override
-    public Reservation addReservation(Reservation reservation) {
-        Chambre c=chambreServiceImp.getFirstChambreByDisponibleTrue();
-        User client=userServiceImp.getUserById(1L);
+    public Reservation addReservation(Reservation reservation, Long idHotel) {
+        //get the dispo chambre in the hotel
+        Chambre c=chambreServiceImp.getFirstChambreByHotel(hotelServiceImp.getById(idHotel));
+        //set disponible of current chambre to false
+        c.setDisponible(false);
+        chambreServiceImp.updateChambre(c);
+        //set chambre of the reservation
+        reservation.setChambre(c);
+        //set user of the reservation
+        reservation.setClient(userServiceImp.getUserById(1L));
 
-        if (c!=null && client!=null){
-            reservation.setChambre(c);
-            reservation.setClient(client);
-        }
         return reservationRepo.save(reservation);
     }
 

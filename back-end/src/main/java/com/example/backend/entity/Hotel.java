@@ -23,6 +23,7 @@ public class Hotel {
     private String telephone;
     private String description;
     private String imagePath;
+    private String prix;
     @Column(columnDefinition = "boolean default false")
     private boolean approved;
     @OneToMany(mappedBy = "hotel",fetch = FetchType.LAZY)

@@ -50,9 +50,9 @@ public class ChambreServiceImp implements ChambreService {
     }
 
     public List<Chambre> getChambresByHotel(Long id) {
-        return chambreRepo.findByHotelId(id);
+        return chambreRepo.getChambreByHotel(hotelService.getById(id));
     }
-    public Chambre getFirstChambreByDisponibleTrue(){
-        return chambreRepo.findFirstByDisponibleTrue();
+    public Chambre getFirstChambreByHotel(Hotel hotel) {
+        return chambreRepo.findFirstByDisponibleTrueAndHotelId(hotel.getId());
     }
 }

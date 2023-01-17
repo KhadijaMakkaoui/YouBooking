@@ -19,9 +19,9 @@ public class ReservationController {
     public List<Reservation> getAllReservations(){
         return reservationService.getAllReservations();
     }
-    @PostMapping("/add/chambre/{chambreId}/{clientId}")
-    public Reservation addReservation(@RequestBody Reservation reservation){
+    @PostMapping("hotel/{id}")
+    public Reservation addReservation(@RequestBody Reservation reservation, @PathVariable Long id){
         /*System.out.printf(reservation.getDateDebut().toString());*/
-        return reservationService.addReservation(reservation);
+        return reservationService.addReservation(reservation,id);
     }
 }

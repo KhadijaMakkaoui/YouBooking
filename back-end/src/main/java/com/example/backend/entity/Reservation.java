@@ -17,8 +17,7 @@ public class Reservation {
     private Long id;
     private Date dateDebut;
     private Date dateFin;
-    private String etat;
-    private float prix;
+    private String type;
     @ManyToOne
     private User client;
     @ManyToOne
