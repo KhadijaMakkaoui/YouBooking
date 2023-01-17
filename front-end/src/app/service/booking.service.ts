@@ -15,8 +15,8 @@ export class BookingService {
     return this.httpClient.get<Booking[]>(`${this.baseURL}`);
   }
 
-  createBooking(booking:Booking):Observable<Object>{
-    return this.httpClient.post(`${this.baseURL}`,booking);
+  createBooking(booking:Booking,idHotel:number):Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}/hotel/${idHotel}`,booking);
   }
   getBookingById(id:number):Observable<Booking>{
     return this.httpClient.get<Booking>(`${this.baseURL}/${id}`);

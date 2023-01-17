@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Booking} from "../../model/booking.model";
 import {BookingService} from "../../service/booking.service";
 
@@ -11,10 +11,12 @@ import {BookingService} from "../../service/booking.service";
 export class BookingComponent {
   id:number;
   booking:Booking=new Booking();
-  constructor(private router: Router,private bookingService:BookingService) { }
+  constructor(private router: Router,private route:ActivatedRoute,private bookingService:BookingService) { }
 
   save() {
-    this.bookingService.createBooking(this.booking).subscribe(
+    this.id = this.route.snapshot.params['id'];
+    this.bookingService.createBooking(this.booking,this.id)
+      .subscribe(
       data => {
         console.log(data);
         this.goToHotelsList();

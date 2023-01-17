@@ -13,62 +13,41 @@
         </div>
         <div class="col-md-4 col-md-pull-7">
           <div class="booking-form">
-            <form>
-              <div class="form-group">
-                <span class="form-label">Hotel</span>
-                <input class="form-control" type="text" placeholder="Enter hotel name">
-              </div>
+            <form (ngSubmit)="onSubmit()">
+
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
                     <span class="form-label">Date debut</span>
-                    <input class="form-control" type="date" required>
+                    <input class="form-control" type="date" required
+                    [(ngModel)]="booking.dateDebut"
+                    name="dateDebut">
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
                     <span class="form-label">Date fin</span>
-                    <input class="form-control" type="date" required>
+                    <input class="form-control" type="date" required
+                           [(ngModel)]="booking.dateFin"
+                           name="dateFin">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-4">
                   <div class="form-group">
-                    <span class="form-label">Rooms</span>
-                    <select class="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                    </select>
-                    <span class="select-arrow"></span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <span class="form-label">Adults</span>
-                    <select class="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                    </select>
-                    <span class="select-arrow"></span>
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group">
-                    <span class="form-label">Children</span>
-                    <select class="form-control">
-                      <option>0</option>
-                      <option>1</option>
-                      <option>2</option>
+                    <span class="form-label">Type</span>
+                    <select class="form-control" name="type" [(ngModel)]="booking.type">
+                      <option>Single</option>
+                      <option>Double</option>
+                      <option>Suite</option>
                     </select>
                     <span class="select-arrow"></span>
                   </div>
                 </div>
               </div>
               <div class="form-btn">
-                <button class="submit-btn">Réserver</button>
+                <button class="submit-btn" type="submit">Reserve</button>
               </div>
             </form>
           </div>

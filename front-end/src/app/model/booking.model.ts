@@ -4,7 +4,6 @@ export class Booking{
   id: number;
   dateDebut: Date;
   dateFin: Date;
-  prix: number;
-  hotel: Hotel;
+  type: string;
 
 }
