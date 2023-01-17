@@ -1,14 +1,10 @@
 package com.example.backend.controller;
-
 import com.example.backend.entity.Hotel;
 import com.example.backend.service.Implementation.HotelServiceImp;
-import com.example.backend.service.Interface.HotelService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
 @RequestMapping("/hotels")
 public class HotelController {

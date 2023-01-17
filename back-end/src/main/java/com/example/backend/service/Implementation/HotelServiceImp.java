@@ -1,6 +1,5 @@
 package com.example.backend.service.Implementation;
 
-import com.example.backend.entity.Chambre;
 import com.example.backend.entity.Hotel;
 import com.example.backend.repository.ChambreRepo;
 import com.example.backend.repository.HotelRepo;

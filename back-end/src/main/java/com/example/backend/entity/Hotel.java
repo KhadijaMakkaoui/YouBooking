@@ -16,16 +16,18 @@ public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    //uuid for the hotel
-   /* private String reference;*/
-    private String nom;
+
+    private String name;
     private String adresse;
     private String ville;
     private String telephone;
+    private String description;
+    private String imagePath;
     @Column(columnDefinition = "boolean default false")
     private boolean approved;
     @OneToMany(mappedBy = "hotel",fetch = FetchType.LAZY)
     @JsonIgnore
+    @ToString.Exclude
     private List<Chambre> chambres;
     @ManyToOne
     private User proprietaire;
