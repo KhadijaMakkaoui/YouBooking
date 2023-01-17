@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Booking} from "../../model/booking.model";
 import {BookingService} from "../../service/booking.service";
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
@@ -14,14 +14,34 @@ export class BookingComponent {
   constructor(private router: Router,private route:ActivatedRoute,private bookingService:BookingService) { }
 
   save() {
-    this.id = this.route.snapshot.params['id'];
-    this.bookingService.createBooking(this.booking,this.id)
-      .subscribe(
-      data => {
-        console.log(data);
-        this.goToHotelsList();
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Book this hotel'
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.id = this.route.snapshot.params['id'];
+        this.bookingService.createBooking(this.booking,this.id)
+          .subscribe(
+            data => {
+              console.log(data);
+              Swal.fire(
+                'Your booking succeeded!',
+                'Your reservation is confirmed',
+                'success'
+              )
+              this.goToHotelsList();
+            }
+          )
+
       }
-    )
+    })
+
   }
 
   private goToHotelsList() {
@@ -30,5 +50,6 @@ export class BookingComponent {
   onSubmit() {
     console.log(this.booking);
     this.save();
+
   }
 }
