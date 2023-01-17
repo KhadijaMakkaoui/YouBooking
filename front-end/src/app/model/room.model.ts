@@ -1,6 +1,6 @@
 import {Hotel} from "./hotel.model";
 
-export class RoomModel{
+export class Room{
   id: number;
   diponible: boolean;
   numero: number;
