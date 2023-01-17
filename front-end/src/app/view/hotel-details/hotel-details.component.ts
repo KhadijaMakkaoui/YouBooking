@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Hotel} from "../../model/hotel.model";
 import {HotelService} from "../../service/hotel.service";
 import {ActivatedRoute} from "@angular/router";
+import {RoomService} from "../../service/room.service";
 
 @Component({
   selector: 'app-hotel-details',
@@ -11,6 +12,7 @@ import {ActivatedRoute} from "@angular/router";
 export class HotelDetailsComponent implements OnInit{
   id: number;
   hotel: Hotel;
+  rooms:RoomService;
   constructor(private hotelService: HotelService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class HotelDetailsComponent implements OnInit{
         this.hotel=data;
       }
     );
+
   }
 
 

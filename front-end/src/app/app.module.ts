@@ -14,6 +14,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import {HotelComponent} from "./view/hotel-list/hotel/hotel.component";
 import {HotelListComponent} from "./view/hotel-list/hotel-list.component";
 import { RoomListComponent } from './view/room-list/room-list.component';
+import { BookingComponent } from './view/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { RoomListComponent } from './view/room-list/room-list.component';
     CreatHotelComponent,
     FooterComponent,
     RoomListComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,
