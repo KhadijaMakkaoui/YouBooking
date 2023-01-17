@@ -10,8 +10,10 @@ export class HotelsService {
   private baseURL = 'http://localhost:8080/api/v1/hotels';
   constructor(private httpClient:HttpClient) { }
   getHotelsList():Observable<Hotels[]>{
-    return this.httpClient.get<Hotels[]>(`${this.baseURL}`);
+    console.log(this.httpClient.get<Hotels[]>(`http://localhost:8080/api/v1/hotels`).subscribe(data => console.log(data)));
+    return this.httpClient.get<Hotels[]>(`http://localhost:8080/api/v1/hotels`);
   }
+
   createHotel(hotel:Hotels):Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,hotel);
   }

@@ -12,7 +12,10 @@ export class HotelListComponent implements OnInit{
   hotels: Hotels[] ;
   constructor(private hotelService: HotelsService,private router:Router) { }
   ngOnInit(): void {
-    this.hotelService.getHotelsList();
+    this.hotelService.getHotelsList().subscribe(
+      (data: Hotels[])=>{
+        this.hotels=data;
+      });;
   }
   private getHotelsList(){
     this.hotelService.getHotelsList()
@@ -31,7 +34,8 @@ export class HotelListComponent implements OnInit{
     this.hotelService.deleteHotel(id)
       .subscribe(
         (data: Hotels[])=>{
-          this.hotels=data;
+          console.log(data);
+          this.getHotelsList()
         }
       );
   }

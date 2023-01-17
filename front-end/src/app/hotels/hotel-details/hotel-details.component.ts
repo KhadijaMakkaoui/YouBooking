@@ -16,7 +16,9 @@ constructor(private hotelService:HotelsService,private route:ActivatedRoute) { }
     this.route.params.subscribe(
       (params:Params)=>{
         this.id=+params['id'];
+/*
         this.hotelDetail=this.hotelService.getHotel(this.id);
+*/
       }
     )
   }
