@@ -27,23 +27,4 @@ export class HotelService {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 }
-/*  hotels:Hotel[] = [
-    new Hotel('Hotel 1', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp'),
-    new Hotel('Hotel 2', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp'),
-    new Hotel('Hotel 3', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp'),
-    new Hotel('Hotel 4', 'This is a test hotel', 'https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp')
-  ];*/
-/*
-  hotelSelected=new EventEmitter<Hotel>();
-*/
-/*
-  constructor() { }
-*/
-  /*getHotels(){
-    //get a copy of the array
-    return this.hotels.slice();
-  }
-  getHotel(index:number){
-    return this.hotels[index];
-  }*/
 

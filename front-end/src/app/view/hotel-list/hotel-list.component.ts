@@ -29,6 +29,7 @@ export class HotelListComponent implements OnInit{
   }
   updateHotel(id:number){
     this.router.navigate(['update-hotel',id]);
+
   }
   deleteHotel(id:number){
     this.hotelService.deleteHotel(id)
