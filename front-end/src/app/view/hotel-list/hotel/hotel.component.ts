@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Hotels} from "../../hotels.model";
-import {HotelsService} from "../../hotels.service";
+import {Hotels} from "../../../model/hotel.model";
+import {HotelService} from "../../../service/hotel.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -12,7 +12,7 @@ export class HotelComponent {
 @Input() hotel: Hotels;
 @Input() index:number;
   hotels: Hotels[] ;
-  constructor(private hotelService: HotelsService,private router:Router) { }
+  constructor(private hotelService: HotelService, private router:Router) { }
   ngOnInit(): void {
     this.hotelService.getHotelsList();
   }

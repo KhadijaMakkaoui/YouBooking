@@ -1,12 +1,12 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {Hotels} from "./hotels.model";
+import {Hotels} from "../model/hotel.model";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class HotelsService {
+export class HotelService {
   private baseURL = 'http://localhost:8080/api/v1/hotels';
   constructor(private httpClient:HttpClient) { }
   getHotelsList():Observable<Hotels[]>{

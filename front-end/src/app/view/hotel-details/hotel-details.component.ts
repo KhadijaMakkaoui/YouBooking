@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Hotels} from "../hotels.model";
+import {Hotels} from "../../model/hotel.model";
 import {ActivatedRoute, Params} from "@angular/router";
-import {HotelsService} from "../hotels.service";
+import {HotelService} from "../../service/hotel.service";
 
 @Component({
   selector: 'app-hotel-details',
@@ -11,7 +11,7 @@ import {HotelsService} from "../hotels.service";
 export class HotelDetailsComponent implements OnInit{
 @Input() hotelDetail: Hotels;
 id: number | undefined;
-constructor(private hotelService:HotelsService,private route:ActivatedRoute) { }
+constructor(private hotelService:HotelService, private route:ActivatedRoute) { }
   ngOnInit() {
     this.route.params.subscribe(
       (params:Params)=>{

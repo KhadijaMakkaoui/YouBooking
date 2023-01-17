@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Hotels} from "../hotels.model";
-import {HotelsService} from "../hotels.service";
+import {Hotels} from "../../model/hotel.model";
+import {HotelService} from "../../service/hotel.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class HotelListComponent implements OnInit{
   hotels: Hotels[] ;
-  constructor(private hotelService: HotelsService,private router:Router) { }
+  constructor(private hotelService: HotelService, private router:Router) { }
   ngOnInit(): void {
     this.hotelService.getHotelsList().subscribe(
       (data: Hotels[])=>{
@@ -43,7 +43,7 @@ export class HotelListComponent implements OnInit{
 }
 /*  @Output() hotelWasSelected = new EventEmitter<Hotels>();
   hotels:Hotels[] = [];
-  constructor(private hotelService:HotelsService) { }
+  constructor(private hotelService:HotelService) { }
   ngOnInit() {
     this.hotels = this.hotelService.getHotels();
   }*/
