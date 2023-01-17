@@ -5,9 +5,8 @@ import {HotelDetailsComponent} from "./view/hotel-details/hotel-details.componen
 import {HotelListComponent} from "./view/hotel-list/hotel-list.component";
 const appRoutes: Routes = [
   {path: '', redirectTo: '/hotels', pathMatch: 'full'},
-  {path: 'hotels', component: HotelListComponent,children: [
-      {path: 'hotels/:id', component: HotelDetailsComponent}
-    ]},
+  {path: 'hotels', component: HotelListComponent},
+  {path: 'hotel-details/:id', component: HotelDetailsComponent},
   {path: 'reservation',component: ReservationComponent},
   ];
 @NgModule({

@@ -1,4 +1,4 @@
-export class Hotels {
+export class Hotel {
   public id:number;
   public name:string;
   public adresse:string;
@@ -7,10 +7,5 @@ export class Hotels {
   public description:string;
   public imagePath: string;
 
-  constructor(id: number, name: string, description: string, imagePath: string) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-    this.imagePath = imagePath;
-  }
+
 }

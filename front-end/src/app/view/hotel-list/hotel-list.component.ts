@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Hotels} from "../../model/hotel.model";
+import {Hotel} from "../../model/hotel.model";
 import {HotelService} from "../../service/hotel.service";
 import {Router} from "@angular/router";
 
@@ -9,18 +9,18 @@ import {Router} from "@angular/router";
   styleUrls: ['./hotel-list.component.css']
 })
 export class HotelListComponent implements OnInit{
-  hotels: Hotels[] ;
+  hotels: Hotel[] ;
   constructor(private hotelService: HotelService, private router:Router) { }
   ngOnInit(): void {
     this.hotelService.getHotelsList().subscribe(
-      (data: Hotels[])=>{
+      (data: Hotel[])=>{
         this.hotels=data;
       });;
   }
   private getHotelsList(){
     this.hotelService.getHotelsList()
       .subscribe(
-        (data: Hotels[])=>{
+        (data: Hotel[])=>{
       this.hotels=data;
     });
   }
@@ -33,7 +33,7 @@ export class HotelListComponent implements OnInit{
   deleteHotel(id:number){
     this.hotelService.deleteHotel(id)
       .subscribe(
-        (data: Hotels[])=>{
+        (data: Hotel[])=>{
           console.log(data);
           this.getHotelsList()
         }
@@ -41,8 +41,8 @@ export class HotelListComponent implements OnInit{
   }
 
 }
-/*  @Output() hotelWasSelected = new EventEmitter<Hotels>();
-  hotels:Hotels[] = [];
+/*  @Output() hotelWasSelected = new EventEmitter<Hotel>();
+  hotels:Hotel[] = [];
   constructor(private hotelService:HotelService) { }
   ngOnInit() {
     this.hotels = this.hotelService.getHotels();

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Hotels} from "../../../model/hotel.model";
+import {Hotel} from "../../../model/hotel.model";
 import {HotelService} from "../../../service/hotel.service";
 import {Router} from "@angular/router";
 
@@ -9,20 +9,13 @@ import {Router} from "@angular/router";
   styleUrls: ['./hotel.component.css']
 })
 export class HotelComponent {
-@Input() hotel: Hotels;
+@Input() hotel: Hotel;
+/*
 @Input() index:number;
-  hotels: Hotels[] ;
+*/
+  hotels: Hotel[] ;
   constructor(private hotelService: HotelService, private router:Router) { }
-  ngOnInit(): void {
-    this.hotelService.getHotelsList();
-  }
-  private getHotelsList(){
-    this.hotelService.getHotelsList()
-      .subscribe(
-        (data: Hotels[])=>{
-          this.hotels=data;
-        });
-  }
+
   hotelDetails(id:number){
     this.router.navigate(['hotel-details',id]);
   }
@@ -32,7 +25,7 @@ export class HotelComponent {
   deleteHotel(id:number){
     this.hotelService.deleteHotel(id)
       .subscribe(
-        (data: Hotels[])=>{
+        (data: Hotel[])=>{
           this.hotels=data;
         }
       );

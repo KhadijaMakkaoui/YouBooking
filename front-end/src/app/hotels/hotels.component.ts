@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Hotels} from "../model/hotel.model";
+import {Hotel} from "../model/hotel.model";
 import {HotelService} from "../service/hotel.service";
 
 @Component({
@@ -9,11 +9,11 @@ import {HotelService} from "../service/hotel.service";
   providers:[HotelService]
 })
 export class HotelsComponent implements OnInit{
-  selectedHotel: Hotels;
+  selectedHotel: Hotel;
   constructor(private hotelService:HotelService) { }
   ngOnInit(){
    /* this.hotelService.hotelSelected.subscribe(
-      (hotel:Hotels)=>{
+      (hotel:Hotel)=>{
         this.selectedHotel=hotel;
       }
     )*/

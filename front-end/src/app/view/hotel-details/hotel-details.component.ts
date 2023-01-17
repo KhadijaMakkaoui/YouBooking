@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Hotels} from "../../model/hotel.model";
-import {ActivatedRoute, Params} from "@angular/router";
+import {Hotel} from "../../model/hotel.model";
 import {HotelService} from "../../service/hotel.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-hotel-details',
@@ -9,17 +9,19 @@ import {HotelService} from "../../service/hotel.service";
   styleUrls: ['./hotel-details.component.css']
 })
 export class HotelDetailsComponent implements OnInit{
-@Input() hotelDetail: Hotels;
-id: number | undefined;
-constructor(private hotelService:HotelService, private route:ActivatedRoute) { }
-  ngOnInit() {
-    this.route.params.subscribe(
-      (params:Params)=>{
-        this.id=+params['id'];
-/*
-        this.hotelDetail=this.hotelService.getHotel(this.id);
-*/
+  id: number;
+  hotel: Hotel;
+  constructor(private hotelService: HotelService, private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.id= this.route.snapshot.params['id'];
+    this.hotel = new Hotel();
+    this.hotelService.getHotelById(this.id).subscribe(
+      (data: Hotel)=>{
+        this.hotel=data;
       }
-    )
+    );
   }
+
+
 }
