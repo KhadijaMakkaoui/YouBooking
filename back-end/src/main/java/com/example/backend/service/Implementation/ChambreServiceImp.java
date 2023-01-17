@@ -48,4 +48,11 @@ public class ChambreServiceImp implements ChambreService {
     public List<Chambre> getAllChambres() {
         return chambreRepo.findAll();
     }
+
+    public List<Chambre> getChambresByHotel(Long id) {
+        return chambreRepo.findByHotelId(id);
+    }
+    public Chambre getFirstChambreByDisponibleTrue(){
+        return chambreRepo.findFirstByDisponibleTrue();
+    }
 }

@@ -10,4 +10,5 @@ public interface ChambreService {
     public Chambre getChambreById(Long id);
     public void deleteChambre(Long id);
     public List<Chambre> getAllChambres();
+    public List<Chambre> getChambresByHotel(Long id);
 }

@@ -5,7 +5,7 @@ import com.example.backend.service.Interface.ReservationService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/reservation")
 public class ReservationController {
@@ -20,8 +20,8 @@ public class ReservationController {
         return reservationService.getAllReservations();
     }
     @PostMapping("/add/chambre/{chambreId}/{clientId}")
-    public Reservation addReservation(@RequestBody Reservation reservation,@PathVariable Long chambreId,@PathVariable Long clientId){
+    public Reservation addReservation(@RequestBody Reservation reservation){
         /*System.out.printf(reservation.getDateDebut().toString());*/
-        return reservationService.addReservation(reservation,chambreId,clientId);
+        return reservationService.addReservation(reservation);
     }
 }

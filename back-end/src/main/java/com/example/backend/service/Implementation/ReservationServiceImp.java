@@ -26,24 +26,15 @@ UserServiceImp userServiceImp;
     }
 
     @Override
-    public Reservation addReservation(Reservation reservation, Long chambreId, Long clientId) {
-        Chambre c=chambreServiceImp.getChambreById(chambreId);
-        User client=userServiceImp.getUserById(clientId);
+    public Reservation addReservation(Reservation reservation) {
+        Chambre c=chambreServiceImp.getFirstChambreByDisponibleTrue();
+        User client=userServiceImp.getUserById(1L);
 
         if (c!=null && client!=null){
             reservation.setChambre(c);
             reservation.setClient(client);
         }
-        //set dates
-        /*if (reservation.getDateDebut()!=null){
-            sdf = new SimpleDateFormat("yyyy-MM-dd");
-            LocalDateTime datedebut = LocalDateTime.parse((CharSequence) reservation.getDateDebut());
-            LocalDateTime datefin = LocalDateTime.parse((CharSequence) reservation.getDateFin());
-            reservation.setDateDebut(datedebut);
-            reservation.setDateFin(datefin);
-        }*/
-
-                return reservationRepo.save(reservation);
+        return reservationRepo.save(reservation);
     }
 
     @Override
