@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HotelsComponent } from './hotels/hotels.component';
-import { HotelDetailsComponent } from './view/hotel-details/hotel-details.component';
 import { HeaderComponent } from './component/header/header.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -20,7 +19,6 @@ import { BookingComponent } from './view/booking/booking.component';
   declarations: [
     AppComponent,
     HotelsComponent,
-    HotelDetailsComponent,
     HeaderComponent,
     ReservationComponent,
     HotelComponent,

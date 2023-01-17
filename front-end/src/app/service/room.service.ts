@@ -20,6 +20,9 @@ export class RoomService {
   getRoomById(id:number):Observable<Room>{
     return this.httpClient.get<Room>(`${this.baseURL}/${id}`);
   }
+  getRoomsByHotelId(id:number):Observable<Room[]>{
+    return this.httpClient.get<Room[]>(`${this.baseURL}/hotel/${id}`);
+  }
   updateRoom(id:number,room:Room):Observable<Object>{
     return this.httpClient.put(`${this.baseURL}/${id}`,room);
   }

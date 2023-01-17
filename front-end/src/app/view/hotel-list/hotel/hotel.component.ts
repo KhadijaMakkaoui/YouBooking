@@ -16,8 +16,8 @@ export class HotelComponent {
   hotels: Hotel[] ;
   constructor(private hotelService: HotelService, private router:Router) { }
 
-  hotelDetails(id:number){
-    this.router.navigate(['hotel-details',id]);
+  hotelRooms(id:number){
+    this.router.navigate(['chambres/hotel',id]);
   }
   updateHotel(id:number){
     this.router.navigate(['update-hotel',id]);
