@@ -1,7 +1,6 @@
 package com.example.backend.service.Implementation;
 
 import com.example.backend.entity.Chambre;
-import com.example.backend.entity.Hotel;
 import com.example.backend.entity.Reservation;
 import com.example.backend.repository.ReservationRepo;
 import com.example.backend.service.Interface.ReservationService;
@@ -19,7 +18,7 @@ HotelServiceImp hotelServiceImp;
 @Autowired
 ChambreServiceImp chambreServiceImp;
 @Autowired
-UserServiceImp userServiceImp;
+UserService userServiceImp;
     SimpleDateFormat sdf = null;
 
     public ReservationServiceImp(ReservationRepo reservationRepo) {

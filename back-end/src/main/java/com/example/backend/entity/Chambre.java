@@ -20,7 +20,6 @@ public class Chambre {
 
     private String numero;
     private Boolean disponible;
-    private float prix;
     @OneToMany(mappedBy = "chambre",fetch = FetchType.LAZY)
     @ToString.Exclude
     @JsonIgnore
